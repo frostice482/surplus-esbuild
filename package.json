@@ -1,0 +1,36 @@
+{
+  "name": "surplus-esbuild",
+  "version": "0.0.1",
+  "description": "ESBuild plugin for Surplus compiler",
+  "author": "frostice482",
+  "license": "MIT",
+  "homepage": "https://github.com/frostice482/surplus-esbuild",
+  "repository": {
+    "type": "git",
+    "url": "github.com:frostice482/surplus-esbuild"
+  },
+  "bugs": {
+    "url": "https://github.com/frostice482/surplus-esbuild/issues",
+    "email": "frostice48260@gmail.com"
+  },
+  "keywords": [
+    "surplus",
+    "esbuild",
+    "surplus-esbuild"
+  ],
+  "dependencies": {
+    "esbuild": "^0.20.2",
+    "surplus": "^0.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "10.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=10"
+  }
+}
