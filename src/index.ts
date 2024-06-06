@@ -9,7 +9,7 @@ export const surplusEsbuild: esbuild.Plugin = {
     setup(build) {
         // for .jsx files
         build.onLoad({ filter: /\.jsx$/i }, async ({ path }) => {
-            const content = await fs.promises.readFile(path, "binary");
+            const content = await fs.promises.readFile(path, 'utf8');
             const compiled = sCompile(content) as string;
 
             return { contents: compiled };
@@ -17,7 +17,7 @@ export const surplusEsbuild: esbuild.Plugin = {
 
         // for .tsx files
         build.onLoad({ filter: /\.tsx$/i }, async ({ path }) => {
-            const content = await fs.promises.readFile(path, "binary");
+            const content = await fs.promises.readFile(path, 'utf8');
             const transformed = await esbuild.transform(content, tsxOpts);
             const compiled = sCompile(transformed.code) as string;
 
