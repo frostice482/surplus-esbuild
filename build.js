@@ -1,13 +1,21 @@
 //@ts-check
-require('esbuild').build({
-    entryPoints: ['src/**/*'],
-    outdir: 'dist',
 
-    format: 'cjs',
-    platform: 'node',
-    //bundle: true,
-    //minify: true,
+const esbuild = require('esbuild')
+const fsp = require('fs/promises')
 
-    tsconfig: 'tsconfig.json',
-    packages: 'external'
-})
+;(async() => {
+    await fsp.rm('dist', { recursive: true, force: true })
+
+    await esbuild.build({
+        entryPoints: ['src/**/*'],
+        outdir: 'dist',
+    
+        format: 'cjs',
+        platform: 'node',
+        //bundle: true,
+        //minify: true,
+    
+        tsconfig: 'tsconfig.json',
+        packages: 'external'
+    })    
+})()
