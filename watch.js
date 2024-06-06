@@ -1,17 +1,10 @@
 //@ts-check
+require('esbuild').context({
+    entryPoints: ['src/**/*'],
+    outdir: 'dist',
 
-const { context } = require('esbuild');
-
-;(async() => {
-    const ctx = await context({
-        entryPoints: ['src/**/*'],
-        outdir: 'dist',
+    format: 'cjs',
+    platform: 'node',
     
-        format: 'cjs',
-        platform: 'node',
-        
-        tsconfig: 'tsconfig.json'
-    })
-
-    ctx.watch()
-})()
+    tsconfig: 'tsconfig.json'
+}).then(ctx => ctx.watch())
