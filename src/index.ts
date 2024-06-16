@@ -2,7 +2,7 @@ import esbuild = require("esbuild");
 import fs = require("fs");
 import { compile as sCompile } from "surplus/compiler";
 
-const surplusImportTest = /(?<=(?:;|^)\s*)import\s*\*\s*as\s+Surplus\s+from\s*(['"])surplus(\1)(?=\s*(?:;|$))/gm
+const surplusImportTest = /(?<=(?:;|^)\s*)import\s*\*\s*as\s+Surplus\s+from\s*(['"])surplus(\1)(?=\s*(?:;|$))/m
 
 export const surplusEsbuild = (opts?: SurplusPluginOptions): esbuild.Plugin => ({
 	name: "surplus-esbuild",
