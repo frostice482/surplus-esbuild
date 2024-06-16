@@ -1,6 +1,6 @@
 {
   "name": "surplus-esbuild",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "ESBuild plugin for Surplus compiler",
   "author": "frostice482",
   "license": "MIT",
